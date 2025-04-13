@@ -1,0 +1,421 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode: Enhanced Nature-Inspired with More Greens */
+    --background: 39 38% 93%; /* Ivory Sand #F6EEE3 */
+    --foreground: 152 38% 17%; /* Dark Forest Green #1B3A2B */
+
+    --card: 39 38% 96%;
+    --card-foreground: 152 38% 17%;
+
+    --popover: 39 38% 96%;
+    --popover-foreground: 152 38% 17%;
+
+    --primary: 82 25% 62%; /* Enhanced Sage Green #A3B18A */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 55% 24%; /* Forest Green #2C5E1A */
+    --secondary-foreground: 39 38% 93%;
+
+    --muted: 82 20% 88%;
+    --muted-foreground: 152 20% 25%;
+
+    --accent: 30 40% 39%; /* Warm Brown #8B5E3B */
+    --accent-foreground: 39 38% 93%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 82 15% 85%;
+    --input: 82 15% 85%;
+    --ring: 82 25% 62%; /* Sage Green */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode: Softer Nature-Inspired with Deep Gray-Green Tones */
+    --background: 120 10% 10%; /* Darker gray-green for better contrast */
+    --foreground: 36 38% 88%; /* Soft Beige #EDE0D4 */
+
+    --card: 120 10% 13%;
+    --card-foreground: 36 38% 88%;
+
+    --popover: 120 10% 13%;
+    --popover-foreground: 36 38% 88%;
+
+    --primary: 74 28% 72%; /* Enhanced Muted Olive #C8C6A7 */
+    --primary-foreground: 120 10% 10%;
+
+    --secondary: 90 60% 28%; /* Olive Drab #6B8E23 */
+    --secondary-foreground: 36 38% 88%;
+
+    --muted: 120 8% 15%;
+    --muted-foreground: 36 20% 80%;
+
+    --accent: 30 36% 22%; /* Slightly lighter espresso brown */
+    --accent-foreground: 36 38% 88%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 8% 20%;
+    --input: 120 8% 20%;
+    --ring: 74 28% 72%; /* Muted Olive */
+  }
+}
+
+/* Typography System */
+@layer base {
+  /* Font family assignments */
+  :root {
+    --font-heading: var(--font-playfair);
+    --font-body: var(--font-lora);
+    --font-ui: var(--font-montserrat);
+  }
+
+  /* Base typography */
+  body {
+    @apply font-body text-base leading-relaxed;
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold tracking-wide;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wider;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug;
+    letter-spacing: 0.015em;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg font-semibold;
+  }
+
+  /* Paragraph styles */
+  p {
+    @apply font-body text-base md:text-lg leading-relaxed;
+  }
+
+  /* Link styles */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Button text */
+  button,
+  .button {
+    @apply font-ui font-semibold tracking-wide;
+  }
+}
+
+/* Luxury typography classes */
+.display-heading {
+  @apply font-heading text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  @apply font-body text-lg md:text-xl italic text-muted-foreground;
+}
+
+.overline {
+  @apply font-ui uppercase text-xs tracking-widest font-medium;
+  letter-spacing: 0.15em;
+}
+
+.caption {
+  @apply font-body text-sm italic text-muted-foreground;
+}
+
+.quote {
+  @apply font-heading text-xl md:text-2xl italic leading-relaxed;
+}
+
+.product-name {
+  @apply font-heading text-xl md:text-2xl font-semibold;
+}
+
+.price {
+  @apply font-ui text-lg md:text-xl font-bold;
+}
+
+.cta-text {
+  @apply font-ui uppercase text-sm md:text-base font-bold tracking-wider;
+  letter-spacing: 0.05em;
+}
+
+/* Transitions for smooth theme changes */
+* {
+  @apply transition-colors duration-200;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Luxury design elements */
+.luxury-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+}
+
+.dark .luxury-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ombre Gradients */
+.nature-gradient {
+  background: linear-gradient(45deg, #5f8d4e 0%, #a3b18a 50%, #5f8d4e 100%);
+}
+
+.dark .nature-gradient {
+  background: linear-gradient(45deg, #4f7942 0%, #8a9a5b 50%, #4f7942 100%);
+}
+
+.ombre-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+}
+
+.ombre-text {
+  background: linear-gradient(135deg, #5f8d4e 0%, #2c5e1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .ombre-text {
+  background: linear-gradient(135deg, #c8c6a7 0%, #8a9a5b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.ombre-card {
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.ombre-overlay {
+  position: relative;
+}
+
+.ombre-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.ombre-button {
+  background: linear-gradient(135deg, #5f8d4e 0%, #2c5e1a 100%);
+  transition: all 0.3s ease;
+}
+
+.ombre-button:hover {
+  background: linear-gradient(135deg, #2c5e1a 0%, #5f8d4e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .ombre-button {
+  background: linear-gradient(135deg, #8a9a5b 0%, #4f7942 100%);
+}
+
+.dark .ombre-button:hover {
+  background: linear-gradient(135deg, #4f7942 0%, #8a9a5b 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  /* animation: shimmer 2s infinite; */ /* Removed shimmer animation */
+}
+
+/* Remove staggered animations that might cause issues */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(163, 177, 138, 0.5);
+}
+
+.dark .hover-glow:hover {
+  box-shadow: 0 0 15px rgba(200, 198, 167, 0.3);
+}
+
+/* Custom scrollbar for eco-friendly feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-leaf-green/70 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-leaf-green;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-moss-green/70;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-moss-green;
+}
+
+/* Ensure proper background colors */
+.bg-background {
+  background-color: hsl(var(--background));
+}
+
+/* Fix tab alignment issues */
+.tabs-list-vertical .tabs-trigger {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-trigger svg {
+  flex-shrink: 0;
+}
+
